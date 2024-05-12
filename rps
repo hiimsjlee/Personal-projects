@@ -1,0 +1,62 @@
+import random
+
+computerMove = random.randint(0,1)
+
+def userMove():
+  computerMove = random.randint(1,9)
+  if computerMove >= 1 and computerMove <= 3:
+    computerMove = "Rock"
+  elif computerMove >= 4 and computerMove <= 6:
+    computerMove = "Paper"
+  else:
+    computerMove = "Scissors"
+    
+  userMove = input("Rock, Paper, Scissors? ")
+  if userMove == "Rock" or userMove == "rock":
+    if computerMove == "Rock":
+      result = print ("Tie!")
+    elif computerMove == "Paper":
+      result = print ("You lose!")
+    else:
+      result = print ("You win!")
+  elif userMove == "Paper" or userMove == "paper":
+    if computerMove == "Rock":
+      result = print ("You win!")
+      playerStats()
+    if computerMove == "Paper":
+      result = print ("Tie!")
+    if computerMove == "Scissors":
+      result = print ("You lose!")
+  elif userMove == "Scissors" or userMove == "scissors":
+    if computerMove == "Rock":
+      result = print ("You lose!")
+    if computerMove == "Paper":
+      result = print ("You win!")
+    if computerMove == "Scissors":
+      result = print ("Tie!")
+
+  def playerStats():
+    result = ''
+    wins = 0
+    losses = 0
+    ties = 0
+    if result == print ("You win!"):
+      wins += 1
+    if result == print ("You lose!"):
+      losses += 1
+    if result == print ("Tie!"):
+      ties += 1
+    print ("Wins: " + str(wins))
+    print ("Losses: " +str(losses))
+    print ("Ties: " + str(ties))
+  
+    playerStats()
+
+i = userMove()
+while i != ("Rock", "rock", "Paper", "paper", "Scissors", "scissors"):
+  print("Please enter a valid move.")
+  userMove()
+  if i == ("Rock", "rock", "Paper", "paper", "Scissors", "scissors"):
+    break
+
+userMove()
